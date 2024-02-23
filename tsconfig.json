@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "types": [
+      "node",
+      "fastify"
+    ],
+    "moduleResolution": "node",
+    "jsx": "react",
+    "target": "es2017",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
