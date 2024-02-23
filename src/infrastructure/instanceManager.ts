@@ -1,13 +1,11 @@
 import { Controller } from "../adapters/controller";
 import { Repository } from "../adapters/repository";
-import { Mid } from "../application/mid";
 import { Service } from "../application/service";
 import { Domain } from "../domain/domain";
 import { IDatabaseConnection } from "../interfaces/databaseInterface";
 import { IDomain } from "../interfaces/domainInterface";
 import { IController } from "../interfaces/interfaceController";
 import { IInstanceManager } from "../interfaces/interfaceInstanceManager";
-import { IMid } from "../interfaces/interfaceMid";
 import { IModelDB } from "../interfaces/interfaceModel";
 import { IRepository } from "../interfaces/interfaceRepository";
 import { IService } from "../interfaces/interfaceService";
@@ -22,7 +20,6 @@ export class InstanceManager implements IInstanceManager {
     private domain: IDomain;
     private controller: IController;
     private modelDB: IModelDB;
-    private mid: IMid;
 
     constructor(data: IDomain['data']) {
       this.data = data;
@@ -31,8 +28,7 @@ export class InstanceManager implements IInstanceManager {
       this.repository = new Repository(this.modelDB);
       this.service = new Service(this.repository);
       this.domain = new Domain(this.data, this.service);
-      this.mid = new Mid(this.data)
-      this.controller = new Controller(this.domain, this.mid);
+      this.controller = new Controller(this.domain);
     }
   
     getController(): IController {

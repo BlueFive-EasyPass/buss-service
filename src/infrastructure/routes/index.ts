@@ -2,8 +2,6 @@ import { FastifyReply, FastifyRequest } from 'fastify'
 import { Resource } from 'fastify-autoroutes'
 import { InstanceManager } from '../instanceManager'
 import { IController } from '../../interfaces/interfaceController'
-import { Mid } from '../../application/mid'
-import { IMid } from '../../interfaces/interfaceMid'
 import { IDomain } from '../../interfaces/domainInterface'
 
 export default () => <Resource>{

@@ -1,14 +1,19 @@
 export interface IDomain {
     data: {
-        adm_id: number | null
-        adm_nome: string | null,
-        adm_email: string | null,
-        adm_senha: string | null,
-        adm_level: number | null
-    }
+        bus_id: number | null;
+        bus_nome: string | null;
+        bus_num: string | null;
+        bus_placa: string | null;
+        bus_fabricacao: string | null;
+        bus_status: string | null;
+        bus_modelo: string | null;
+        bus_tarifa: string | null;
+        bussines_buss_CNPJ: number | null;
+        bus_route_rote_id: number | null;
+    };
 
-    save(): Promise<Object> 
-    search(): Promise<Array<Object>> 
-    update(arg0: Object): Promise<Object> 
-    delete(): Promise<Object> 
+    save(): Promise<Object>;
+    search(): Promise<Array<Object>>;
+    update(arg0: Object): Promise<Object>;
+    delete(): Promise<Object>;
 }

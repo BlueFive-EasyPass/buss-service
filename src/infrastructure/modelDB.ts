@@ -13,25 +13,44 @@ export class ModelDB implements IModelDB {
 
     private defineModel() {
         return this.instance.define('buss', {
-            adm_id: {
+            bus_id: {
                 type: DataTypes.INTEGER,
                 autoIncrement: true,
                 primaryKey: true
             },
-            adm_nome: {
+            bus_nome: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
-            adm_email: {
+            bus_num: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            bus_placa: {
                 type: DataTypes.STRING,
                 allowNull: false,
                 unique: true
             },
-            adm_senha: {
+            bus_fabricacao: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            bus_status: {
+                type: DataTypes.STRING,
+            },
+            bus_modelo: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            bus_tarifa: {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
-            adm_level: {
+            bussines_buss_CNPJ: {
+                type: DataTypes.NUMBER,
+                allowNull: false,
+            },
+            bus_route_rote_id: {
                 type: DataTypes.NUMBER,
                 allowNull: false,
             }

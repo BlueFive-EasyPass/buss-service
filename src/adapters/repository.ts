@@ -1,5 +1,4 @@
 
-import { IDatabaseConnection } from "../interfaces/databaseInterface";
 import { IDomain } from "../interfaces/domainInterface";
 import { IModelDB } from "../interfaces/interfaceModel";
 import { IRepository } from "../interfaces/interfaceRepository";
