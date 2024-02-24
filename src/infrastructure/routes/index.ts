@@ -36,19 +36,19 @@ export default () => <Resource>{
     },
 
     put: {
-        url: '/:email',
+        url: '/:placa',
         handler: async (request: FastifyRequest, reply: FastifyReply) => {
             const query = request.body as IDomain['data']
-            const { email } = request.params as any
+            const { placa } = request.params as any
 
             const param = {
-                adm_email: email
+                bus_placa: placa
             }
 
-            if (email === null || email === undefined || email === "") {
+            if (placa === null || placa === undefined || placa === "") {
                 reply.code(400).send({ erro: "Parametro enviado é inválido" })
-
-            } else {
+            }
+                
                 const instanceManager = new InstanceManager(query);
                 const controller: IController = instanceManager.getController();
 
@@ -60,7 +60,6 @@ export default () => <Resource>{
                 } catch (error) {
                     reply.code(500).send({ erro: "Erro ao processar a requisição" })
                 }
-            }
         }
     },
 
